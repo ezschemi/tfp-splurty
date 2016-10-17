@@ -2,6 +2,7 @@ class QuotesController < ApplicationController
   def index
     @quote = Quote.order("RANDOM()").first
   end
+
   def create
     @quote = Quote.create(quote_params)
     if @quote.invalid?
